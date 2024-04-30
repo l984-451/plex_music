@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A71DE36D2BD2EC27009361A7 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71DE36C2BD2EC27009361A7 /* Models.swift */; };
+		A71DE3712BD2F13D009361A7 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71DE3702BD2F13D009361A7 /* XMLParser.swift */; };
 		A7F356DC2BD2E3C40078890A /* plex_music Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A7F356DB2BD2E3C40078890A /* plex_music Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A7F356E12BD2E3C40078890A /* plex_musicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F356E02BD2E3C40078890A /* plex_musicApp.swift */; };
 		A7F356E32BD2E3C40078890A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F356E22BD2E3C40078890A /* ContentView.swift */; };
 		A7F356E52BD2E3C70078890A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7F356E42BD2E3C70078890A /* Assets.xcassets */; };
 		A7F356E82BD2E3C70078890A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7F356E72BD2E3C70078890A /* Preview Assets.xcassets */; };
+		A7F356FD2BD2E6430078890A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F356FC2BD2E6430078890A /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,12 +42,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A71DE36C2BD2EC27009361A7 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		A71DE3702BD2F13D009361A7 /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		A7F356D52BD2E3C40078890A /* plex_music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = plex_music.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F356DB2BD2E3C40078890A /* plex_music Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "plex_music Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F356E02BD2E3C40078890A /* plex_musicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plex_musicApp.swift; sourceTree = "<group>"; };
 		A7F356E22BD2E3C40078890A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A7F356E42BD2E3C70078890A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7F356E72BD2E3C70078890A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A7F356FC2BD2E6430078890A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +86,11 @@
 			children = (
 				A7F356E02BD2E3C40078890A /* plex_musicApp.swift */,
 				A7F356E22BD2E3C40078890A /* ContentView.swift */,
+				A71DE36C2BD2EC27009361A7 /* Models.swift */,
+				A7F356FC2BD2E6430078890A /* NetworkManager.swift */,
 				A7F356E42BD2E3C70078890A /* Assets.xcassets */,
 				A7F356E62BD2E3C70078890A /* Preview Content */,
+				A71DE3702BD2F13D009361A7 /* XMLParser.swift */,
 			);
 			path = "plex_music Watch App";
 			sourceTree = "<group>";
@@ -192,8 +201,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7F356FD2BD2E6430078890A /* NetworkManager.swift in Sources */,
 				A7F356E32BD2E3C40078890A /* ContentView.swift in Sources */,
+				A71DE36D2BD2EC27009361A7 /* Models.swift in Sources */,
 				A7F356E12BD2E3C40078890A /* plex_musicApp.swift in Sources */,
+				A71DE3712BD2F13D009361A7 /* XMLParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
