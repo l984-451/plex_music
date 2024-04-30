@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		A71DE36D2BD2EC27009361A7 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71DE36C2BD2EC27009361A7 /* Models.swift */; };
 		A71DE3712BD2F13D009361A7 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71DE3702BD2F13D009361A7 /* XMLParser.swift */; };
+		A7D62DFD2BE01EC100A1117A /* itemChildren.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D62DFC2BE01EC100A1117A /* itemChildren.swift */; };
+		A7D62E002BE0222700A1117A /* itemMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D62DFF2BE0222700A1117A /* itemMetadata.swift */; };
+		A7D62E022BE023CF00A1117A /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D62E012BE023CF00A1117A /* Metadata.swift */; };
+		A7D62E042BE028B000A1117A /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D62E032BE028B000A1117A /* AudioManager.swift */; };
+		A7D62E062BE029CC00A1117A /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D62E052BE029CC00A1117A /* Media.swift */; };
 		A7F356DC2BD2E3C40078890A /* plex_music Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A7F356DB2BD2E3C40078890A /* plex_music Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A7F356E12BD2E3C40078890A /* plex_musicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F356E02BD2E3C40078890A /* plex_musicApp.swift */; };
 		A7F356E32BD2E3C40078890A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F356E22BD2E3C40078890A /* ContentView.swift */; };
@@ -44,6 +49,12 @@
 /* Begin PBXFileReference section */
 		A71DE36C2BD2EC27009361A7 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		A71DE3702BD2F13D009361A7 /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
+		A7D5184C2BD7ED7A006A782D /* plex-music-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "plex-music-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		A7D62DFC2BE01EC100A1117A /* itemChildren.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemChildren.swift; sourceTree = "<group>"; };
+		A7D62DFF2BE0222700A1117A /* itemMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemMetadata.swift; sourceTree = "<group>"; };
+		A7D62E012BE023CF00A1117A /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
+		A7D62E032BE028B000A1117A /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		A7D62E052BE029CC00A1117A /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		A7F356D52BD2E3C40078890A /* plex_music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = plex_music.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F356DB2BD2E3C40078890A /* plex_music Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "plex_music Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F356E02BD2E3C40078890A /* plex_musicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plex_musicApp.swift; sourceTree = "<group>"; };
@@ -64,6 +75,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A7D62DFB2BE01E9E00A1117A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A7D62DFC2BE01EC100A1117A /* itemChildren.swift */,
+				A7D62DFF2BE0222700A1117A /* itemMetadata.swift */,
+				A7D62E012BE023CF00A1117A /* Metadata.swift */,
+				A7D62E052BE029CC00A1117A /* Media.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A7D62DFE2BE0210A00A1117A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A7F356FC2BD2E6430078890A /* NetworkManager.swift */,
+				A7D62E032BE028B000A1117A /* AudioManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		A7F356CE2BD2E3C30078890A = {
 			isa = PBXGroup;
 			children = (
@@ -84,10 +115,12 @@
 		A7F356DF2BD2E3C40078890A /* plex_music Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				A7D62DFE2BE0210A00A1117A /* Managers */,
+				A7D62DFB2BE01E9E00A1117A /* Models */,
+				A7D5184C2BD7ED7A006A782D /* plex-music-Watch-App-Info.plist */,
 				A7F356E02BD2E3C40078890A /* plex_musicApp.swift */,
 				A7F356E22BD2E3C40078890A /* ContentView.swift */,
 				A71DE36C2BD2EC27009361A7 /* Models.swift */,
-				A7F356FC2BD2E6430078890A /* NetworkManager.swift */,
 				A7F356E42BD2E3C70078890A /* Assets.xcassets */,
 				A7F356E62BD2E3C70078890A /* Preview Content */,
 				A71DE3702BD2F13D009361A7 /* XMLParser.swift */,
@@ -201,11 +234,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7D62E002BE0222700A1117A /* itemMetadata.swift in Sources */,
 				A7F356FD2BD2E6430078890A /* NetworkManager.swift in Sources */,
+				A7D62E022BE023CF00A1117A /* Metadata.swift in Sources */,
 				A7F356E32BD2E3C40078890A /* ContentView.swift in Sources */,
+				A7D62E062BE029CC00A1117A /* Media.swift in Sources */,
 				A71DE36D2BD2EC27009361A7 /* Models.swift in Sources */,
 				A7F356E12BD2E3C40078890A /* plex_musicApp.swift in Sources */,
+				A7D62E042BE028B000A1117A /* AudioManager.swift in Sources */,
 				A71DE3712BD2F13D009361A7 /* XMLParser.swift in Sources */,
+				A7D62DFD2BE01EC100A1117A /* itemChildren.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +383,7 @@
 				DEVELOPMENT_TEAM = ZHB786H6YN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "plex-music-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = plex_music;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
@@ -360,7 +399,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -375,6 +414,7 @@
 				DEVELOPMENT_TEAM = ZHB786H6YN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "plex-music-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = plex_music;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
@@ -391,7 +431,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 10.4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
