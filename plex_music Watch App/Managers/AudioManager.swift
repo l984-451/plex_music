@@ -64,7 +64,7 @@ class MusicStreamer: NSObject {
         } catch {
             print ("could not set active")
         }
-        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .def)
+        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
         // Initialize the AVPlayer with the URL
         var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
         var queryItems = urlComponents?.queryItems ?? []

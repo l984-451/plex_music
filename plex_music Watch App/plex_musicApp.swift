@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct plex_music_Watch_AppApp: App {
+struct plex_music_Watch_App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

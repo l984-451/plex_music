@@ -16,13 +16,3 @@ struct Media: Codable {
     var container: String?
     var Part: [Part]?
 }
-
-struct Part: Codable {
-    var id: Int?
-    var key: String?
-    var duration: Int?
-    var file: String?
-    var size: Int?
-    var container: String?
-    var hasThumbnail: String?
-}
