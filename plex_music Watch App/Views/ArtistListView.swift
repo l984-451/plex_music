@@ -7,25 +7,22 @@
 
 import SwiftUI
 
-var artists = [
-Artist(id: "Artist 01", name: "Artist 01", Metadata: nil),
-Artist(id: "Artist 02", name: "Artist 02", Metadata: nil),
-Artist(id: "Artist 03", name: "Artist 03", Metadata: nil),
-Artist(id: "Artist 04", name: "Artist 04", Metadata: nil),
-]
-
 struct ArtistListView: View {
+    @ObservedObject var viewModel: AuthViewModel
+
     var body: some View {
-        NavigationView {
-            List(artists) {artist in
-                HStack {
-                    Text(artist.name)
-                    Spacer()
-                    Image(artist.Metadata?.art ?? "placeholder_artist")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 50, height: 50)
-                        .colorInvert()
+        NavigationStack {
+            List(viewModel.Artists) {artist in
+                NavigationLink(destination: ArtistDetailsView(viewModel: viewModel, objectRatingKey: artist.ratingKey ?? "")) {
+                    HStack {
+                        Text(artist.title ?? "")
+                        Spacer()
+                        Image(artist.art != nil ? "\(viewModel.serverURI!)\(artist.art!)" : "placeholder_artist")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 50, height: 50)
+    //                        .colorInvert()
+                    }
                 }
             }
             .navigationTitle("Artists")
@@ -34,5 +31,5 @@ struct ArtistListView: View {
 }
 
 #Preview {
-    ArtistListView()
+    ContentView()
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A71DE36D2BD2EC27009361A7 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71DE36C2BD2EC27009361A7 /* Models.swift */; };
 		A71DE3712BD2F13D009361A7 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71DE3702BD2F13D009361A7 /* XMLParser.swift */; };
+		A7B5CCF32BE26B48000494AC /* ArtistDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B5CCF22BE26B48000494AC /* ArtistDetailsView.swift */; };
 		A7D62DFD2BE01EC100A1117A /* itemChildren.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D62DFC2BE01EC100A1117A /* itemChildren.swift */; };
 		A7D62E002BE0222700A1117A /* itemMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D62DFF2BE0222700A1117A /* itemMetadata.swift */; };
 		A7D62E022BE023CF00A1117A /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D62E012BE023CF00A1117A /* Metadata.swift */; };
@@ -55,6 +56,7 @@
 /* Begin PBXFileReference section */
 		A71DE36C2BD2EC27009361A7 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		A71DE3702BD2F13D009361A7 /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
+		A7B5CCF22BE26B48000494AC /* ArtistDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailsView.swift; sourceTree = "<group>"; };
 		A7D5184C2BD7ED7A006A782D /* plex-music-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "plex-music-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		A7D62DFC2BE01EC100A1117A /* itemChildren.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemChildren.swift; sourceTree = "<group>"; };
 		A7D62DFF2BE0222700A1117A /* itemMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemMetadata.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				A7DD8A872BE1179F0090EDFF /* AuthView.swift */,
 				A7DD8A892BE118320090EDFF /* ArtistListView.swift */,
 				A7DD8A8B2BE118400090EDFF /* ServerListView.swift */,
+				A7B5CCF22BE26B48000494AC /* ArtistDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				A7F356E32BD2E3C40078890A /* ContentView.swift in Sources */,
 				A7D62E062BE029CC00A1117A /* Media.swift in Sources */,
 				A7DD8A832BE116D80090EDFF /* Part.swift in Sources */,
+				A7B5CCF32BE26B48000494AC /* ArtistDetailsView.swift in Sources */,
 				A71DE36D2BD2EC27009361A7 /* Models.swift in Sources */,
 				A7F356E12BD2E3C40078890A /* plex_musicApp.swift in Sources */,
 				A7D62E042BE028B000A1117A /* AudioManager.swift in Sources */,

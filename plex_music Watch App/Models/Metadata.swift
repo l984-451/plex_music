@@ -7,7 +7,10 @@
 
 import Foundation
 
-struct Metadata: Codable {
+struct Metadata: Codable, Identifiable {
+    var id: String {
+        return ratingKey ?? NSUUID().uuidString
+    }
     var ratingKey: String?
     var key: String?
     var guid: String?

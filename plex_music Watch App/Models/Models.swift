@@ -57,19 +57,22 @@ struct Connection: Codable {
     }
 }
 
-struct Address: Codable {
+struct Address: Codable, Identifiable {
+    var id: String {
+        return address
+    }
     let address: String
     let port: Int
     let https: Bool
     let external: Bool
 }
 
-struct AddressPretty: Identifiable {
-    let id: String
-    let address: String
-    let port: Int
-    let isExternal: Bool
-}
+//struct AddressPretty: Identifiable {
+//    let id: String
+//    let address: String
+//    let port: Int
+//    let isExternal: Bool
+//}
 
 struct LibraryContainer: Codable {
     let MediaContainer: LibraryMediaContainer
@@ -163,17 +166,7 @@ struct LibraryDetailContainer: Codable {
 
 struct MediaContainer: Codable {
     var size: Int?
-    var Metadata: [ArtistMetadata]?
-}
-
-struct ArtistMetadata: Codable {
-    var ratingKey: String?
-    var key: String?
-    var title: String?
-    var thumb: String?
-    var art: String?
-    var summary: String?
-    // Include any other artist-specific details you need.
+    var Metadata: [Metadata]?
 }
 
 

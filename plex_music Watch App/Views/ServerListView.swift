@@ -19,7 +19,7 @@ struct ServerListView: View {
                             Text(address.address)
                                 .bold()
                             Text(verbatim: "Port: \(address.port)")
-                            Text(address.isExternal ? "external" : "internal")
+                            Text(address.external ? "external" : "internal")
                         }
                         Spacer()
                         if address.address == selection {
@@ -46,6 +46,6 @@ struct ServerListView: View {
     }
 }
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    ContentView()
+//}

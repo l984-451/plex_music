@@ -227,7 +227,7 @@ class NetworkManager {
         }.resume()
     }
 
-    func getLibraryItems(authToken: String, serverUri: String, sectionId: String, completion: @escaping ([ArtistMetadata]?, Error?) -> Void) {
+    func getLibraryItems(authToken: String, serverUri: String, sectionId: String, completion: @escaping ([Metadata]?, Error?) -> Void) {
         let urlString = "\(serverUri)/library/sections/\(sectionId)/all"
         guard let url = URL(string: urlString) else {
             completion(nil, NSError(domain: "Invalid URL", code: -1, userInfo: nil))

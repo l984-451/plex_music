@@ -16,7 +16,9 @@ class AuthViewModel: ObservableObject {
     @Published var isAuthenticated = false
     @Published var errorMessage: String?
     @Published var isCheckingAuth = false
-    @Published var serverAddresses = [AddressPretty]()
+    @Published var serverAddresses = [Address]()
+    
+    @Published var Artists = [Metadata]()
     
     private var authCheckTimer: Timer?
     
@@ -30,6 +32,8 @@ class AuthViewModel: ObservableObject {
         
         if let uri = getLocalURI() {
             serverURI = uri
+            
+            getLibraryItems()
         } else {
             print("No local server. Load the list")
             getServerURI()
@@ -125,12 +129,8 @@ class AuthViewModel: ObservableObject {
         NetworkManager.shared.getServers(authToken: authToken) { addresses, error in
             DispatchQueue.main.async {
                 if let addresses = addresses {
-                    for address in addresses {
-                        print(address.address)
-                        let aP = AddressPretty(id: address.address, address: address.address, port: address.port, isExternal: address.external)
-                        self.serverAddresses.append(aP)
-                        print(aP.address)
-                    }
+                    self.serverAddresses.removeAll()
+                    self.serverAddresses = addresses
                 } else if let error = error {
                     print("Failed to fetch addresses: \(error.localizedDescription)")
                 }
@@ -144,14 +144,11 @@ class AuthViewModel: ObservableObject {
         guard let authToken = UserDefaults.standard.string(forKey: "authToken") else {
             return
         }
-        NetworkManager.shared.getLibraryItems(authToken: authToken, serverUri: "http://104.15.219.181:32400", sectionId: "3") { artistData, error in
+        NetworkManager.shared.getLibraryItems(authToken: authToken, serverUri: "http://104.15.219.181:32400", sectionId: "3") { metadata, error in
             DispatchQueue.main.async {
-                if let details = artistData {
-                    print("Details")
-                    for data in details {
-                        print(data.title! as String)
-                        print(data.ratingKey! as String)
-                    }
+                if let details = metadata {
+                    self.Artists.removeAll()
+                    self.Artists = details
                 } else if let error = error {
                     print("Failed to fetch addresses: \(error.localizedDescription)")
                 }
@@ -159,33 +156,35 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func getItemChildren() {
-        guard let authToken = UserDefaults.standard.string(forKey: "authToken") else {
+    func getItemChildren(ratingKey: String, completion: @escaping ([Metadata]?, Error?) -> Void) {
+        guard let authToken = authToken else {
+            print("No authToken")
+            completion(nil, nil) // Return nil if no authToken
             return
         }
-        //hans zimmer
-        //44926
-        //the holiday
-        // 45302
-        // the cowch
-        // 45320
-        NetworkManager.shared.getItemChildren(authToken: authToken, serverUri: "http://104.15.219.181:32400", ratingKey: "45302") { details, error in
+        guard let serverURI = serverURI else {
+            print("No server URI")
+            completion(nil, nil) // Return nil if no server URI
+            return
+        }
+        NetworkManager.shared.getItemChildren(authToken: authToken, serverUri: "http://\(serverURI):32400", ratingKey: ratingKey) { details, error in
             DispatchQueue.main.async {
-                if let details = details {
-                    //                    print("Fetched item Metadata successfully: \(details)")
-                    if let mdata = details.Metadata {
-                        for data in mdata {
-                            print(data.title)
-                            print(data.Media!.first!.Part!.first?.key)
-                        }
-                    }
-                } else if let error = error {
+                if let error = error {
                     print("Error fetching item details: \(error.localizedDescription)")
+                    completion(nil, error)
+                } else if let details = details, let mdata = details.Metadata {
+                    for data in mdata {
+                        print(data)
+                    }
+                    completion(mdata, nil)
+                } else {
+                    completion(nil, nil)
                 }
             }
         }
-        
     }
+
+    
     func setServerURI(uri: String) {
         saveServerURI(uri: uri)
         serverURI = uri

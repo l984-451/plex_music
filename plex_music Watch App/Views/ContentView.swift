@@ -15,7 +15,7 @@ struct ContentView: View {
             ServerListView(viewModel: authModel)
         } else if authModel.serverURI != nil && authModel.authToken != nil {
             NavigationStack {
-                ArtistListView()
+                ArtistListView(viewModel: authModel)
             }
         } else {
             AuthenticationView(viewModel: authModel)
